@@ -61,15 +61,20 @@ The model was evaluated using 5-fold cross-validation, yielding highly consisten
 Based on the validation set, the model demonstrates excellent discriminative ability, particularly for identifying "Normal" cases.
 
 * **Class 0 (Normal):** Flawless classification. 3,037 correct predictions with zero false positives or false negatives.
-* **Class 1 (Anterolisthesis):** 
-![anterolisthesis](results/anterolisthesis.png)
-* **Class 2 (Retrolisthesis):** 
-![retrolisthesis](results/retrolisthesis.png)
 
-![Confusion Matrix](results/confusion_matrix.png)
+* **Class 1 (Anterolisthesis):** <br>
+  <img src="results/anterolisthesis.png" alt="Anterolisthesis" width="300"/>
+
+* **Class 2 (Retrolisthesis):** <br>
+  <img src="results/retrolisthesis.png" alt="Retrolisthesis" width="300"/>
+
+<br>
+
+<div align="center">
+  <img src="results/confusion_matrix.png" alt="Confusion Matrix" width="450"/>
+</div>
 
 *Note: The model shows slight confusion between Class 1 and Class 2, which is expected given both conditions involve vertebral slippage in opposing directions.*
-
 ---
 
 ## Feature Importance
