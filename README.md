@@ -30,6 +30,8 @@ Below is the breakdown of the raw data by condition and gender. *(Note: While th
 | **Right Laterolisthesis** | 43 | 26 | 69 | (not included in LA view) |
 | *Total Disorders* | *424* | *197* | *621* | - |
 
+
+
 ## Methodology
 
 1. **Feature Engineering:** Geometric features (such as step-off distances, slip distances, compression ratios, and tilt angles) were systematically calculated using the L1-S1 coordinate data.
@@ -59,8 +61,12 @@ The model was evaluated using 5-fold cross-validation, yielding highly consisten
 Based on the validation set, the model demonstrates excellent discriminative ability, particularly for identifying "Normal" cases.
 
 * **Class 0 (Normal):** Flawless classification. 3,037 correct predictions with zero false positives or false negatives.
-* **Class 1 (Anterolisthesis):** 455 correct predictions. Misclassified as Retrolisthesis 9 times.
-* **Class 2 (Retrolisthesis):** 165 correct predictions. Misclassified as Anterolisthesis 29 times.
+* **Class 1 (Anterolisthesis):** 
+![anterolisthesis](results/anterolisthesis.png)
+* **Class 2 (Retrolisthesis):** 
+![retrolisthesis](results/retrolisthesis.png)
+
+![Confusion Matrix](results/confusion_matrix.png)
 
 *Note: The model shows slight confusion between Class 1 and Class 2, which is expected given both conditions involve vertebral slippage in opposing directions.*
 
