@@ -75,7 +75,7 @@ Based on the validation set, the model demonstrates excellent discriminative abi
 </div>
 
 - *Note: The model shows slight confusion between Class 1 and Class 2, which is expected given both conditions involve vertebral slippage in opposing directions.*
----
+
 
 ## Feature Importance
 
