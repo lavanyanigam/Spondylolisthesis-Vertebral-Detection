@@ -26,8 +26,8 @@ Below is the breakdown of the raw data by condition and gender. *(Note: While th
 | **Normal** | 1,856 | 1,123 | 2,979 |  (Class 0) |
 | **Anterolisthesis** | 343 | 121 | 464 |  (Class 1) |
 | **Retrolisthesis** | 94 | 100 | 194 |  (Class 2) |
-| **Left Laterolisthesis** | 44 | 17 | 61 | (not included in LA view) |
-| **Right Laterolisthesis** | 43 | 26 | 69 | (not included in LA view) |
+| **Left Laterolisthesis** | 44 | 17 | 61 | no |
+| **Right Laterolisthesis** | 43 | 26 | 69 | no |
 | *Total Disorders* | *424* | *197* | *621* | - |
 
 
@@ -52,9 +52,9 @@ Below is the breakdown of the raw data by condition and gender. *(Note: While th
 
 ### Cross-Validation Accuracy
 
-The model was evaluated using 5-fold cross-validation, yielding highly consistent results with an **average accuracy of 89.26%**.
+The model was evaluated using 5-fold cross-validation, yielding highly consistent results with an **average accuracy of 90.50%**.
 
-* **Fold Accuracies:** `[0.8863, 0.8782, 0.8917, 0.9012, 0.9053]`
+* **Fold Accuracies:** `[0.9036, 0.8876, 0.9093, 0.9093, 0.9161]`
 
 ### Confusion Matrix Analysis
 
@@ -74,27 +74,31 @@ Based on the validation set, the model demonstrates excellent discriminative abi
   <img src="results/confusion_matrix.png" alt="Confusion Matrix" width="450"/>
 </div>
 
-* *(Note: The model shows slight confusion between Class 1 and Class 2, which is expected given both conditions involve vertebral slippage in opposing directions.)*
----
+- *Note: The model shows slight confusion between Class 1 and Class 2, which is expected given both conditions involve vertebral slippage in opposing directions.*
+
 
 ## Feature Importance
 
-The model's decisions are heavily driven by localized geometric measurements of the lower lumbar spine (L4, L5) and sacrum (S1). Below are the top 10 most influential features driving the model's predictions.
+The model's decisions are heavily driven by localized geometric measurements of the lower lumbar spine (L4, L5) and sacrum (S1). Below are the top 6 most influential features driving the model's predictions.
 
 | Rank | Feature | Importance Score | Description/Notes |
 | --- | --- | --- | --- |
-| **1** | `L4_L5_step_off` | 0.1387 | The most dominant predictor |
-| **2** | `slip_dist_L4_L5` | 0.0665 | Measures forward/backward slip |
-| **3** | `slip_dist_L5_S1` | 0.0650 | Critical junction for spondylolisthesis |
-| **4** | `age` | 0.0580 | Demographic factor |
-| **5** | `perct_spond` | 0.0490 | Percentage of spondylolisthesis |
-| **6** | `gender` | 0.0339 | Demographic factor |
-| **7** | `p_disl_h_L4b_L5a` | 0.0234 | Posterior dislocation height |
-| **8** | `compr_ratio_L3b_L4a` | 0.0227 | Compression ratio |
-| **9** | `compr_ratio_L2b_L3a` | 0.0213 | Compression ratio |
-| **10** | `v_tilt_L3b` | 0.0209 | Vertebral tilt |
+| **1** | `L4_L5_step_off` | 0.1592 | The most dominant predictor |
+| **2** | `slip_dist_L3_L4` | 0.0991 | Measures forward/backward slip |
+| **3** | `slip_dist_L4_L5` | 0.0758 | Measures forward/backward slip |
+| **4** | `slip_dist_L5_S1` | 0.0672 | Critical junction for spondylolisthesis |
+| **5** | `age` | 0.0418 | Demographic factor |
+| **6** | `perct_spond` | 0.0416 | Percentage of spondylolisthesis |
 
-*(Note: 32 additional geometric features contribute remaining fractional importance to the model, totaling 42 features).*
+*(Note: 38 additional geometric features contribute remaining fractional importance to the model, totaling 44 features).*
+
+## Results
+
+- The SHAP anaylysis for Retrolithesis class, similarly for other classes in Results
+<img src="results/shap_retrolithesis.png" alt="SHAP_Retrolisthesis" width="300"/>
+
+- SHAP waterfall plot for a specific patient showing exactly why the model predicted what it did for that person.
+<img src="results/shap_waterfall.png" alt="Retrolisthesis" width="300"/>
 
 ---
 
