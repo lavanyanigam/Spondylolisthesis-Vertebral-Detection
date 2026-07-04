@@ -11,9 +11,18 @@ The model specifically classifies patients into three categories:
 * **1:** Anterolisthesis
 * **2:** Retrolisthesis
 
-## Demo Video
+## Demo Video AND Images
+[Demo Video](results/streamlit-demo-video.mov)
+<br>
 
-https://github.com/lavanyanigam/Spondylolisthesis-Vertebral-Detection/blob/branch-2/results/streamlit-demo-video.mov
+<div align="center">
+  <img src="results/streamlit-demo-1.png" alt="Upload Page" width="450"/>
+</div>
+<br>
+
+<div align="center">
+  <img src="results/streamlit-demo-2.png" alt="Result and SHAP plot" width="450"/>
+</div>
 
 ## Dataset Details
 
