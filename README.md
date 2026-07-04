@@ -11,6 +11,19 @@ The model specifically classifies patients into three categories:
 * **1:** Anterolisthesis
 * **2:** Retrolisthesis
 
+## Demo Video AND Images
+[Demo Video](results/streamlit-demo-video.mov)
+<br>
+
+<div align="center">
+  <img src="results/streamlit-demo-1.png" alt="Upload Page" width="450"/>
+</div>
+<br>
+
+<div align="center">
+  <img src="results/streamlit-demo-2.png" alt="Result and SHAP plot" width="450"/>
+</div>
+
 ## Dataset Details
 
 **Source:** [BUU-LSPINE Dataset](https://services.informatics.buu.ac.th/spine/)

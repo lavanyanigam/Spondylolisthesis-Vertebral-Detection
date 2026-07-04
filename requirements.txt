@@ -1,0 +1,9 @@
+streamlit
+streamlit-image-coordinates
+pandas
+numpy
+pillow
+xgboost
+shap
+matplotlib
+scikit-learn
