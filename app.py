@@ -153,14 +153,14 @@ with col1:
     if xray_file:
         image = Image.open(xray_file).convert("RGB")
 
-        # --- Resize for display ---
+        
         MAX_WIDTH = 700
         scale = MAX_WIDTH / image.width if image.width > MAX_WIDTH else 1.0
         disp_w, disp_h = int(image.width * scale), int(image.height * scale)
         display_img = image.resize((disp_w, disp_h))
         draw = ImageDraw.Draw(display_img)
 
-        # Draw existing points (convert original coords -> display coords)
+        
         for label, (x, y) in st.session_state.points.items():
             dx, dy = x * scale, y * scale
             r = 4
@@ -178,11 +178,11 @@ with col1:
         if coords is not None and current_index < TOTAL_POINTS:
             raw_click = (coords["x"], coords["y"])
 
-            # Only process if this is a NEW click, not the same one from last rerun
+            
             if st.session_state.get("last_click") != raw_click:
                 st.session_state.last_click = raw_click
 
-                # Convert display coords back to original image coords
+                
                 orig_x = raw_click[0] / scale
                 orig_y = raw_click[1] / scale
 
