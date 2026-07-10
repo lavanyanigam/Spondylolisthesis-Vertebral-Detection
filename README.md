@@ -31,11 +31,11 @@ The trained XGBoost model was evaluated against ground-truth diagnoses provided 
 an Orthopedist at Moolchand Hospital, New Delhi on a held-out test set of lumbar spine X-ray images. The task is a 3 class classification problem distinguishing between **Normal**, **Anterolisthesis**, and **Retrolisthesis**.
 
 ### Test Set
-- Total images evaluated: **[77]**
-- Class distribution (ground truth): Normal: [49], Anterolisthesis: [24], Retrolisthesis: [4]
+- Total images evaluated: **77**
+- Class distribution (ground truth): Normal: 49, Anterolisthesis: 24, Retrolisthesis: 4
 
 ### Accuracy
-Overall accuracy: **[88.31]%** 
+Overall accuracy: **88.31%** 
 
 > Note: Accuracy alone can be misleading under class imbalance. See per-class metrics 
 > and confusion matrix below for a fuller picture of model performance.
@@ -50,12 +50,12 @@ between Retrolisthesis and Normal, suggesting the model reliably distinguishes b
 ### Per-Class Performance
 | Class | Precision | Recall | F1-score |
 |---|---|---|---|
-| Normal | [88.4] | [93.8] | [91.02] |
-| Anterolisthesis | [87.5] | [87.5] | [87.5] |
-| Retrolisthesis | [100.0] | [25.0] | [40.o] |
+| Normal | 88.4 | 93.8 | 91.02 |
+| Anterolisthesis | 87.5 | 87.5 | 87.5 |
+| Retrolisthesis | 100.0 | 25.0 | 40.0 |
 
 ### Agreement with Ground Truth
-Cohen's Kappa: **[ 0.753]** : measures agreement between model and doctor beyond 
+Cohen's Kappa: ** 0.753** : measures agreement between model and doctor beyond 
 what would be expected by chance.
 
 ### Limitations
