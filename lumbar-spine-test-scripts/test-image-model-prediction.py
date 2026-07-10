@@ -3,7 +3,7 @@ import csv
 import pandas as pd
 import math
 import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, cohen_kappa_score
 
 
 true_label = "/Users/lavanyanigam/Desktop/spondylolisthesis-vertebral-project/lumbar-spine-test-labels/lumbar-spine-test-label-actual.csv"
@@ -23,4 +23,6 @@ cm=confusion_matrix(tl.loc[common,"Diagnosis"],pl.loc[common,"Diagnosis"], label
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels_order )
 disp.plot(cmap=plt.cm.Blues,values_format='d')
 plt.show()
+kappa = cohen_kappa_score(tl.loc[common,"Diagnosis"],pl.loc[common,"Diagnosis"])
+print(f"Cohen's Kappa: {kappa:.3f}")
 

@@ -3,7 +3,7 @@
 
 ## Project Overview
 
-This project leverages machine learning to classify spinal conditions using geometric features extracted from the **BUU-LSPINE dataset**. The goal is to accurately predict the presence of specific spinal displacements based on geometric coordinates and demographic data.
+This project uses machine learning to classify spinal conditions using geometric features extracted from the **BUU-LSPINE dataset**. The goal is to accurately predict the presence of specific spinal displacements based on geometric coordinates and demographic data.
 
 The model specifically classifies patients into three categories:
 
@@ -11,7 +11,7 @@ The model specifically classifies patients into three categories:
 * **1:** Anterolisthesis
 * **2:** Retrolisthesis
 
-## Demo Video AND Images
+## Demo Video And Images
 [Demo Video](results/streamlit-demo-video.mov)
 <br>
 
@@ -24,6 +24,44 @@ The model specifically classifies patients into three categories:
   <img src="results/streamlit-demo-2.png" alt="Result and SHAP plot" width="450"/>
 </div>
 
+## Model Evaluation
+
+### Overview
+The trained XGBoost model was evaluated against ground-truth diagnoses provided by 
+an Orthopedist at Moolchand Hospital, New Delhi on a held-out test set of lumbar spine X-ray images. The task is a 3 class classification problem distinguishing between **Normal**, **Anterolisthesis**, and **Retrolisthesis**.
+
+### Test Set
+- Total images evaluated: **[77]**
+- Class distribution (ground truth): Normal: [49], Anterolisthesis: [24], Retrolisthesis: [4]
+
+### Accuracy
+Overall accuracy: **[88.31]%** 
+
+> Note: Accuracy alone can be misleading under class imbalance. See per-class metrics 
+> and confusion matrix below for a fuller picture of model performance.
+
+### Confusion Matrix
+
+![Confusion Matrix](results/confusion_matrix_test.png)
+
+The model correctly identified 94% of Normal cases and showed higher confusion 
+between Retrolisthesis and Normal, suggesting the model reliably distinguishes between abnormal classes exhibiting comparatively low recall.
+
+### Per-Class Performance
+| Class | Precision | Recall | F1-score |
+|---|---|---|---|
+| Normal | [88.4] | [93.8] | [91.02] |
+| Anterolisthesis | [87.5] | [87.5] | [87.5] |
+| Retrolisthesis | [100.0] | [25.0] | [40.o] |
+
+### Agreement with Ground Truth
+Cohen's Kappa: **[ 0.753]** : measures agreement between model and doctor beyond 
+what would be expected by chance.
+
+### Limitations
+- Ground-truth labels were provided by a single Orthopedist, no inter-rater 
+  reliability data is available to benchmark against human variability.
+- Dataset size and Class Imbalance.
 ## Dataset Details
 
 **Source:** [BUU-LSPINE Dataset](https://services.informatics.buu.ac.th/spine/)
