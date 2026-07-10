@@ -55,7 +55,7 @@ between Retrolisthesis and Normal, suggesting the model reliably distinguishes b
 | Retrolisthesis | 100.0 | 25.0 | 40.0 |
 
 ### Agreement with Ground Truth
-Cohen's Kappa: ** 0.753** : measures agreement between model and doctor beyond 
+Cohen's Kappa:  0.753 - measures agreement between model and doctor beyond 
 what would be expected by chance.
 
 ### Limitations
