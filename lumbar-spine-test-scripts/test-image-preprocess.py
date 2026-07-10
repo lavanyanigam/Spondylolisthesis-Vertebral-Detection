@@ -3,7 +3,7 @@ import shutil
 
 
 src_dir = "/Users/lavanyanigam/Desktop/spondylolisthesis-vertebral-project/lumbar-spine-test-images"
-clean_path = "/Users/lavanyanigam/Desktop/spondylolisthesis-vertebral-project/lumbar-spine-clean-test-images"
+clean_path = "/Users/lavanyanigam/Desktop/spondylolisthesis-vertebral-project/lumbar-spine-test-labels/lumbar-spine-test-label-actual.csv"
 
 os.makedirs(clean_path, exist_ok=True)
 

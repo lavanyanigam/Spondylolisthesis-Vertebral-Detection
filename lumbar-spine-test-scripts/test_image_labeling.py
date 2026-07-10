@@ -2,8 +2,9 @@ import os
 import csv
 from PIL import Image
 
+
 src_dir = "/Users/lavanyanigam/Desktop/spondylolisthesis-vertebral-project/lumbar-spine-clean-test-images"
-csv_path = "/Users/lavanyanigam/Desktop/spondylolisthesis-vertebral-project/lumbar-spine-test-label.csv"
+csv_path = "/Users/lavanyanigam/Desktop/spondylolisthesis-vertebral-project/lumbar-spine-test-labels/lumbar-spine-test-label-actual.csv"
 
 
 os.makedirs(os.path.dirname(csv_path), exist_ok=True)
