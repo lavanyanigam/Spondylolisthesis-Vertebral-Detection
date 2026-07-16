@@ -1,4 +1,4 @@
-# Spondylolisthesis Classification Model 
+# Spondylolisthesis Vertebral Detection and Classification
 ## via Spine Geometric Feature Extraction
 
 ## Project Overview
